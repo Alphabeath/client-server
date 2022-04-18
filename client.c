@@ -48,7 +48,7 @@ int main() {
 	char buffer[maxlen];
 	char* pbuffer = buffer;
 
-	// will remain open until the server terminates the connection
+	//forma de mantener la conexion hasta que el servidor termine la conexion
 	while ((n = recv(sock, pbuffer, maxlen, 0)) > 0) {
 		pbuffer += n;
 		maxlen -= n;
@@ -58,7 +58,7 @@ int main() {
 		printf("received: '%s'\n", buffer);
 	}
 
-	// close the socket
+	//se cierra el socket
 	close(sock);
 	return 0;
 }

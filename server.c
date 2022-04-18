@@ -69,7 +69,7 @@ int main(int argc, char *argv[]) {
 		printf("client connected with ip address: %s\n",
 		       inet_ntoa(client_address.sin_addr));
 
-		// keep running as long as the client keeps the connection open
+		// sigue corriendo mientras que el cliente se mantenga conectado
 		while ((n = recv(sock, pbuffer, maxlen, 0)) > 0) {
 			pbuffer += n;
 			maxlen -= n;
@@ -77,7 +77,7 @@ int main(int argc, char *argv[]) {
 			pbuffer[0] = '\0';
 			printf("received: '%s'\n", buffer);
 
-			// echo received content back
+			// envia lo que recibio de vuelta o el mismo mensaje
 			send(sock, buffer, len, 0);
 		}
 
